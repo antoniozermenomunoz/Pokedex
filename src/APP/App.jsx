@@ -2,17 +2,21 @@ import { useEffect } from "react";
 import { Buscador } from "./COMPONENTS/Buscador";
 import { Lista } from "./COMPONENTS/Lista";
 import { getPokemons } from "./API";
-import { getpokemonswithdetails } from "./ACTIONS";
+import { getpokemonswithdetails, setLoading } from "./ACTIONS";
 import { useDispatch, useSelector } from "react-redux";
+import { Loading } from "./COMPONENTS/MESSANGES/Loading/index";
 
 function App() {
   const pokemons = useSelector((state) => state.pokemons);
+  const loading = useSelector((state) => state.loading);
   const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchPokemon = async () => {
+      dispatch(setLoading(true));
       const resPokemons = await getPokemons();
       dispatch(getpokemonswithdetails(resPokemons));
+      dispatch(setLoading(false));
     };
     fetchPokemon();
   }, []);
@@ -20,7 +24,7 @@ function App() {
   return (
     <>
       <Buscador />
-      <Lista items={pokemons} />
+      {loading ? <Loading /> : <Lista items={pokemons} />}
     </>
   );
 }
