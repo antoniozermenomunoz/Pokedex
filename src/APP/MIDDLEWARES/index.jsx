@@ -1,5 +1,4 @@
 export const logger = (store) => (next) => (action) => {
-  console.log(action);
   next(action);
 };
 
@@ -9,6 +8,6 @@ export const featuring = (store) => (next) => (actioninfo) => {
     ...actioninfo,
     action: { ...actioninfo.action, payload: featured },
   };
-  console.log(updateActionInfo);
+
   next(updateActionInfo);
 };

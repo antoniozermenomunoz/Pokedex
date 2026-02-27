@@ -12,16 +12,23 @@ function Carta({ item }) {
 
       <figure className="pokemon-img-container text-center mb-3">
         <img
-          src="https://pokemonletsgo.pokemon.com/assets/img/common/char-pikachu.png"
-          alt="pikachu"
+          src={item.sprites.front_default}
+          alt={item.name}
           className="img-fluid"
         />
       </figure>
 
       <div className="text-center">
-        <span className="badge rounded-pill type-badge px-4 py-2">
-          Eléctrico
-        </span>
+        {item.types.map((tipo) => {
+          return (
+            <span
+              key={tipo.slot}
+              className="badge rounded-pill type-badge px-4 py-2"
+            >
+              {tipo.type.name}
+            </span>
+          );
+        })}
       </div>
     </div>
   );
