@@ -1,0 +1,48 @@
+.text-pokemon-blue {
+  color: var(--TercerColor);
+  letter-spacing: 1px;
+}
+
+.bg-pokemon-red {
+  background-color: var(--SegundoColor) !important;
+}
+
+.search-wrapper {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  border-bottom: 5px solid var(--TercerColor);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.pokedex-input {
+  border: 2px solid #eee !important;
+  padding: 12px;
+  font-weight: 500;
+}
+
+.pokedex-input:focus {
+  border-color: var(--SegundoColor) !important;
+  box-shadow: 0 0 0 0.25 margin-bottom rgba(239, 83, 80, 0.2) !important;
+  outline: none;
+}
+
+.btn-pokemon-blue {
+  background-color: var(--TercerColor);
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0 25px;
+  transition: all 0.3s ease;
+}
+
+.btn-pokemon-blue:hover {
+  background-color: #2a3794;
+  color: var(--PrimerColor);
+  transform: translateY(-1px);
+}
+
+.custom-search-group {
+  border-radius: 10px;
+  overflow: hidden;
+}

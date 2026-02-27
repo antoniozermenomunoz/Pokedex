@@ -1,7 +1,9 @@
 :root {
-  --PrimerColor: #145392;
-  --SegundoColor: #ef3025;
-  --TercerColor: #ffffff;
-  --TextoOscuro: #000000;
-  --TextoClaro: #ffffff;
+  --PrimerColor: #ffde00;
+  --SegundoColor: #ff0000;
+  --TercerColor: #3b4cca;
 }
+/*html,
+body {
+  background-color: var(--SegundoColor);
+}*/
