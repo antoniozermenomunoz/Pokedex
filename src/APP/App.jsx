@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { Buscador } from "./COMPONENTS/Buscador";
 import { Lista } from "./COMPONENTS/Lista";
-import { getPokemons, getPokemonsDetail } from "./API";
-import { setPokemons } from "./ACTIONS";
+import { getPokemons } from "./API";
+import { getpokemonswithdetails } from "./ACTIONS";
 import { useDispatch, useSelector } from "react-redux";
 
 function App() {
@@ -12,11 +12,7 @@ function App() {
   useEffect(() => {
     const fetchPokemon = async () => {
       const resPokemons = await getPokemons();
-      const detailPokemons = await Promise.all(
-        resPokemons.map((pokemon) => getPokemonsDetail(pokemon)),
-      );
-
-      dispatch(setPokemons(detailPokemons));
+      dispatch(getpokemonswithdetails(resPokemons));
     };
     fetchPokemon();
   }, []);
