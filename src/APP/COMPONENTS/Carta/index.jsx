@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import "./style.css";
-import { setFavorite } from "../../ACTIONS";
+import { setFavorite } from "../../SLICES/dataSlice";
 
 function Carta({ item }) {
   const dispatch = useDispatch();
