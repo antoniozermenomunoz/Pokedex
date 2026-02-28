@@ -4,9 +4,11 @@ import { setFavorite } from "../../SLICES/dataSlice";
 
 function Carta({ item }) {
   const dispatch = useDispatch();
+
   const Favorito = () => {
     dispatch(setFavorite({ pokemonId: item.id }));
   };
+
   return (
     <div className="card pokemon-card shadow-lg p-3">
       <div className="d-flex justify-content-between align-items-center mb-2 px-2">

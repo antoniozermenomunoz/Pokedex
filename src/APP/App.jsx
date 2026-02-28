@@ -8,12 +8,13 @@ import { fetchPokemonsWithDetails } from "./SLICES/dataSlice";
 function App() {
   const pokemons = useSelector((state) => state.data.pokemons, shallowEqual);
   const loading = useSelector((state) => state.ui.loading);
+  const search = useSelector((state) => state.data.search);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchPokemonsWithDetails());
-  }, []);
+    dispatch(fetchPokemonsWithDetails(search));
+  }, [search]);
 
   return (
     <>

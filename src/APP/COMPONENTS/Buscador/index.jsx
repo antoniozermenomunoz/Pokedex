@@ -1,6 +1,13 @@
+import { useDispatch } from "react-redux";
+import { setSearch } from "../../SLICES/dataSlice";
 import "./style.css";
 
 function Buscador() {
+  const dispatch = useDispatch();
+  const Buscar = (e) => {
+    dispatchEvent(setSearch({ search: e }));
+  };
+
   return (
     <div className="container mt-4">
       <div className="row justify-content-center">
@@ -31,6 +38,9 @@ function Buscador() {
                 type="text"
                 className="form-control pokedex-input"
                 placeholder="Nombre o número..."
+                onChange={(evento) => {
+                  dispatch(setSearch(evento.target.value));
+                }}
               />
             </div>
           </div>
