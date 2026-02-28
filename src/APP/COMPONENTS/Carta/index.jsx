@@ -3,10 +3,9 @@ import "./style.css";
 import { setFavorite } from "../../ACTIONS";
 
 function Carta({ item }) {
-  console.log(item);
   const dispatch = useDispatch();
   const Favorito = () => {
-    dispatch(setFavorite({ pokemonid: item.id }));
+    dispatch(setFavorite({ pokemonId: item.id }));
   };
   return (
     <div className="card pokemon-card shadow-lg p-3">
