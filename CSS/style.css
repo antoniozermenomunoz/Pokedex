@@ -1,0 +1,9 @@
+:root {
+  --PrimerColor: #ffde00;
+  --SegundoColor: #ff0000;
+  --TercerColor: #3b4cca;
+}
+/*html,
+body {
+  background-color: var(--SegundoColor);
+}*/
